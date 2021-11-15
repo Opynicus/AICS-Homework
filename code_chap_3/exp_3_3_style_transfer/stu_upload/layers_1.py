@@ -27,7 +27,7 @@ class FullyConnectedLayer(object):
     def update_param(self, lr):  # 参数更新
         # TODO：对全连接层参数利用参数进行更新
         self.weight = self.weight - lr * self.d_weight
-        self.bias = self.bias - lr * np.sum(self.d_bias,axis = 1)
+        self.bias = self.bias - lr * self.d_bias
     def load_param(self, weight, bias):  # 参数加载
         assert self.weight.shape == weight.shape
         assert self.bias.shape == bias.shape
