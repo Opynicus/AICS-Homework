@@ -89,12 +89,12 @@ class ConvolutionalLayer(object):
         pad_height = top_diff.shape[2] + (self.kernel_size-1-self.padding) * 2 
         pad_width = top_diff.shape[3] + (self.kernel_size-1-self.padding) * 2
         
-        #1.计算 d_weight 和 d_bias
+        #计算 d_weight 和 d_bias
         # bottom_diff = np.zeros(self.input_pad.shape)
         col_diff = np.reshape(top_diff, [cout, -1]).T #[N, C, H, W] -> [C , N*H*W].T
         self.d_weight = np.dot(self.col_image.T, col_diff).reshape(self.weight.shape) 
         self.d_bias = np.sum(col_diff, axis=0) 
-        #边界扩充top_diff
+        
         pad_diff = np.zeros(shape=(top_diff.shape[0], top_diff.shape[1], pad_height, pad_width))
         pad_diff[:, :, self.padding:self.padding+top_diff.shape[2], self.padding:self.padding+top_diff.shape[3]]=top_diff
         #计算转换
