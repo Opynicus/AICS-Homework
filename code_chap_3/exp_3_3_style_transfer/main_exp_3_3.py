@@ -24,7 +24,7 @@ def test_speed_up():
     test_filter = np.random.rand(256, 3, 3, 256)
     test_bias = np.random.rand(256)
 
-    conv = ConvolutionalLayer(3, 256, 256, 1, 1)
+    conv = ConvolutionalLayer(3, 256, 256, 1, 1, 1)
     conv.init_param()
     conv.load_param(test_filter, test_bias)
     stamp = time.time()
@@ -91,7 +91,6 @@ if __name__ == '__main__':
         content_loss = np.array([])
         style_loss = np.array([])
         content_diff = np.zeros(transfer_image.shape)
-        #print(content_diff)
         style_diff = np.zeros(transfer_image.shape)
         for layer in CONTENT_LOSS_LAYERS:
             # TODO： 计算内容损失的前向传播
@@ -99,7 +98,6 @@ if __name__ == '__main__':
             content_loss = np.append(content_loss, current_loss)
             # TODO： 计算内容损失的反向传播
             dloss = content_loss_layer.backward(transfer_layers[layer], content_layers[layer])
-            #print(dloss)
             content_diff += vgg.backward(dloss, layer)
         for layer in STYLE_LOSS_LAYERS:
             # TODO： 计算风格损失的前向传播

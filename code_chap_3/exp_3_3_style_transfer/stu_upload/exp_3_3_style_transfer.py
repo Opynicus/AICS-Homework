@@ -105,7 +105,7 @@ class VGG19(object):
     def save_image(self, input_image, image_shape, image_dir):
         #print('Save image at ' + image_dir)
         # TODO：调整输出图片的形状
-        input_image = np.transpose(self.input_image, [0, 2, 3, 1])
+        input_image = np.transpose(input_image, [0, 2, 3, 1])
         input_image = input_image[0] + self.image_mean
         input_image = np.clip(input_image, 0, 255).astype(np.uint8)
         input_image = scipy.misc.imresize(input_image, image_shape)
