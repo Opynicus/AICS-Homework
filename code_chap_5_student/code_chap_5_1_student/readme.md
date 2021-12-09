@@ -1,4 +1,5 @@
-实验步骤：
+## 实验步骤：
+
 1、环境变量初始化：先进入env/，执行source env.sh; 再进入tensorflow-v1.10/,执行source env.sh
 2、bangc算子填写：补齐src/bangc/PluginPowerDifferenceOp/plugin_power_difference_kernel.h,plgin_power_difference_kernel.mlu和powerDiff.cpp，执行make.sh进行编译，运行power_diff_test测试
 3、集成到cnplugin: 补齐src/bangc/PluginPowerDifferenceOp/cnplugin.h和plugin_power_difference_op.cc，将整个PluginPowerDifferenceOp文件夹复制到env/Cambricon-CNPlugin-MLU270/pluginops,在Cambricon-CNPlugin-MLU270目录下执行build_cnplugin.sh重新编译cnplugin;编译完成后将build/libcnplugin.so和cnplugin.h分别拷入到env/neuware/lib64和env/neuware/include中。
@@ -18,3 +19,12 @@
 ├── tensorflow_mlu-1.14.0-cp27-cp27mu-linux_x86_64.whl      // 重新编译tensorflow生成的whl
 └── transform_mlu.py
 将以上文件压缩成zip格式进行提交
+
+
+
+## 坑点
+
+​		1，`code_chap_5_student/env/Cambricon-CNPlugin-MLU270/build_cnplugin.sh`中加上`NEUWARE="../neuware"`语句
+
+​		2，`code_chap_5_student、env/neuware/include`下的`cnml.h`,`cnplugin.h`,`cnrt.h`还有`code_chap_5_student、env/neuware/lib64`下的`libcnml.so`,`libcnrt.so`文件需放入`/usr/local/neuware`对应的同名文件夹下。
+
