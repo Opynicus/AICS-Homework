@@ -1,0 +1,41 @@
+This is the Twins File of "offline_model".
+Function number: 1
+---------------kernel graph--------------------
+
+Function #0 {
+Kernel num:1 
+Cache mode:0 
+Name: subnet0
+Input number: 2
+    Input #0.
+        Mask: 338036233
+        Shape(dim): 1 256 256 3 
+        Name: 
+        Id: 1531
+        Data type: CNRT_FLOAT16        Dim Order: CNRT_NHWC
+        Quantize position: 1747936364
+        Quantize scale: 0.000000
+    Input #1.
+        Mask: 338036233
+        Shape(dim): 1 256 256 3 
+        Name: 
+        Id: 1855
+        Data type: CNRT_FLOAT16        Dim Order: CNRT_NHWC
+        Quantize position: 32652
+        Quantize scale: -0.000001
+Output number: 1
+    Output #0.
+        Mask: 338036233
+        Shape(dim): 1 256 256 3 
+        Name: 
+        Id: 1874
+        Data type: CNRT_FLOAT16        Dim Order: CNRT_NHWC
+        Quantize position: 32652
+        Quantize scale: 6278515366183709278470144.000000
+Kernel header #0:
+    Name: subnet04
+    Core version: 
+    Model Parallelism: 16
+    Core limit: 16
+    Inst data split: true
+}
