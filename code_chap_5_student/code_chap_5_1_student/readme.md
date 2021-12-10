@@ -26,5 +26,5 @@
 
 ​		1，`code_chap_5_student/env/Cambricon-CNPlugin-MLU270/build_cnplugin.sh`中加上`NEUWARE="../neuware"`语句
 
-​		2，`code_chap_5_student/env/neuware/include`下的`cnml.h`,`cnplugin.h`,`cnrt.h`还有`code_chap_5_student/env/neuware/lib64`下的`libcnml.so`,`libcnrt.so`文件需放入`/usr/local/neuware`对应的同名文件夹下，否则Tensorflow无法编译。然后对应的`env/tensorflow-v1.10/build_tensorflow-v1.10_mlu.sh`文件中job_nums默认为8，想加快速度记得改。
+​		2，`code_chap_5_student/env/neuware/include`下的`cnml.h`,`cnplugin.h`,`cnrt.h`还有`code_chap_5_student/env/neuware/lib64`下的`libcnml.so`,`libcnrt.so`,`libcnplugin.so`文件需放入`/usr/local/neuware`对应的同名文件夹下，否则Tensorflow无法编译。然后对应的`env/tensorflow-v1.10/build_tensorflow-v1.10_mlu.sh`文件中job_nums默认为8，想加快速度记得改。
 
