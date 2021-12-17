@@ -10,6 +10,7 @@
 7、离线推理：补齐src/offline/src/inference.cpp
 
 自动测试需要提交的文件：
+
 ├── inference.cpp
 
 ├── libcnplugin.so      // 重新编译cnplugin生成的库文件
