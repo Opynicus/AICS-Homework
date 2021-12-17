@@ -11,12 +11,19 @@
 
 自动测试需要提交的文件：
 ├── inference.cpp
+
 ├── libcnplugin.so      // 重新编译cnplugin生成的库文件
+
 ├── plugin_power_difference_kernel.h
+
 ├── plugin_power_difference_kernel.mlu
+
 ├── powerDiff.cpp
+
 ├── power_difference_test_bcl.py
+
 ├── tensorflow_mlu-1.14.0-cp27-cp27mu-linux_x86_64.whl      // 重新编译tensorflow生成的whl
+
 └── transform_mlu.py
 将以上文件压缩成zip格式进行提交
 
